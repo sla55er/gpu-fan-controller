@@ -47,8 +47,8 @@ class GPUController {
   }
 
   monitorGPUData() {
-    setInterval(() => {
-      this.getGPUData().forEach(gpuData => {
+    setInterval(async () => {
+      await this.getGPUData().forEach(gpuData => {
         const gpuIndex = parseInt(gpuData['index'], 10);
         const gpuTemp = parseInt(gpuData['temperature.gpu'], 10);
         const gpuWattage = parseFloat(gpuData['power.draw [W]']);
