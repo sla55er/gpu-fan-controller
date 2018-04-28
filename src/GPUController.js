@@ -22,10 +22,10 @@ class GPUController {
             console.log('--------------------------------------------------')
             console.log(`Index: ${gpuIndex}, Wattage: ${gpuWattage}, Temp: ${gpuTemp}, FanSpeed: ${gpuFanSpeed}`);
 
-            const gpuTempRange = this.config.find(range => gpuTemp >= range.from && gpuTemp < range.to);
-            if (gpuFanSpeed != gpuTempRange.fanSpeed) {
-                this.setGPUFan(gpuIndex, gpuTempRange.fanSpeed);
-            }
+            // const gpuTempRange = this.config.find(range => gpuTemp >= range.from && gpuTemp < range.to);
+            // if (gpuFanSpeed != gpuTempRange.fanSpeed) {
+            //     this.setGPUFan(gpuIndex, gpuTempRange.fanSpeed);
+            // }
         })
     }
 
