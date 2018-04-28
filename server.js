@@ -5,7 +5,7 @@ const controlInterval = 30 * 1000;
     const gpuController = new GPUController();
 
     setInterval(() => {
-        gpuController.controlGPUFan();
+        gpuController.monitorGPUData();
         console.log('@');
         console.log('@');
         console.log('@');

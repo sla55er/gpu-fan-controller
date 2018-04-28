@@ -45,6 +45,20 @@ class GPUController {
         const stats = csvjson.toObject(stdout, {delimiter: ', '});
         return stats;
     }
+
+    async monitorGPUData() {
+      const gpusData = await this.getGPUData();
+
+      gpusData.forEach(gpuData => {
+        const gpuIndex = parseInt(gpuData['index'], 10);
+        const gpuTemp = parseInt(gpuData['temperature.gpu'], 10);
+        const gpuWattage = parseFloat(gpuData['power.draw [W]']);
+        const gpuFanSpeed = parseInt(gpuData['fan.speed [%]'], 10);
+
+        console.log('--------------------------------------------------')
+        console.log(`Index: ${gpuIndex}, Wattage: ${gpuWattage}, Temp: ${gpuTemp}, FanSpeed: ${gpuFanSpeed}`);
+      })
+    }
 }
 
 module.exports = GPUController;
