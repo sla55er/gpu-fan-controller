@@ -42,6 +42,7 @@ class GPUController {
   async getGPUData() {
     const command = 'nvidia-smi --query-gpu=index,power.draw,temperature.gpu,fan.speed --format=csv';
     const {stdout, stderr} = await exec(command);
+    console.log('executed')
     const stats = csvjson.toObject(stdout, {delimiter: ', '});
     return stats;
   }
