@@ -1,5 +1,5 @@
 const GPUController = require('./src/GPUController');
-const controlInterval = 30 * 1000;
+const controlInterval = 5 * 1000;
 
 (function main(){
     const gpuController = new GPUController();
